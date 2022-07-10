@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors!</title>
+</head>
+<body>  
+</body>
+<script>
+    let computerChoice = computerPlay();
+function computerPlay(){
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random()*choices.length)]; 
+}
+    let playerChoice = playerPlay();
+function playerPlay(){
+    let input; 
+    input = prompt("Please enter your choice (Rock, Paper, or Scissors.)");
+    let choice = input.toLowerCase();
+    return choice; 
+   
+    
+}
+function playRound(playerChoice, computerChoice){
+    if (playerChoice === computerChoice){
+            return "It's a draw!";
+    }
+    else if ( playerChoice === "rock" && computerChoice === "scissors" ||
+              playerChoice === "paper" && computerChoice === "rock" ||
+              playerChoice === "scissors" && computerChoice === "paper"){
+              return "Congratulations! You won!";
+
+              }
+    else if ( playerChoice === "rock" && computerChoice === "paper" ||
+              playerChoice === "paper" && computerChoice === "scissors" ||
+              playerChoice === "scissors" && computerChoice === "rock") {
+                return "You lost. Better luck next time!";
+
+              }
+}
+
+function game(){
+
+    for (let i = 0; i < 5; i++) {
+            playRound(playerChoice, computerChoice)
+}
+}
+
+   
+console.log(computerChoice, playerChoice)
+console.log(playRound(playerChoice, computerChoice))
+console.log(game())
+
+</script>
+</html>
